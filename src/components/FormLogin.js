@@ -1,25 +1,12 @@
-import "./App.css";
 import React from "react";
 
-const USER = {
-  email: "email@teste.com",
-  senha: "1234",
-};
-
-function FormLogin({ form, setForm, setSession }) {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (form.email === USER.email && form.senha === USER.senha) {
-      setSession({ isAuth: true, user: form });
-    }
-  };
-
+function FormLogin({ onSubmit, form, setForm, setSession, setError }) {
   return (
-    <form method="post" onSubmit={handleSubmit}>
+    <form method="post" onSubmit={onSubmit}>
       <label>
         Email:
         <input
+          id="email"
           type="text"
           name="email"
           onChange={(e) => setForm({ ...form, email: e.target.value })}
@@ -28,6 +15,7 @@ function FormLogin({ form, setForm, setSession }) {
       <label>
         Senha:
         <input
+          id="password"
           type="text"
           name="senha"
           onChange={(e) => setForm({ ...form, senha: e.target.value })}
