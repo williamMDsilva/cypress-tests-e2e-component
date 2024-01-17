@@ -3,7 +3,7 @@ import React from "react";
 function FormLogin({ onSubmit, form, setForm, setSession, setError }) {
   return (
     <form method="post" onSubmit={onSubmit}>
-      <label>
+      <label data-cy="label-email">
         Email:
         <input
           id="email"
@@ -12,7 +12,7 @@ function FormLogin({ onSubmit, form, setForm, setSession, setError }) {
           onChange={(e) => setForm({ ...form, email: e.target.value })}
         />
       </label>
-      <label>
+      <label data-cy="label-senha">
         Senha:
         <input
           id="password"

@@ -1,6 +1,6 @@
 describe("App, ", () => {
   it("Try login with email and password Right", () => {
-    cy.visit("/"); //https://example.cypress.io
+    cy.visit("/");
 
     cy.get("#email").type("email@teste.com"); //
     cy.get("#password").type("1234"); //
@@ -12,7 +12,7 @@ describe("App, ", () => {
     cy.get(`[data-cy=logout]`).should(`have.value`, `Deslogar`);
   });
 
-  it("Try login with email and password Right", () => {
+  it("Try login with email and password wrong", () => {
     cy.visit("/");
 
     cy.get("#email").type("email@teste.com"); //
